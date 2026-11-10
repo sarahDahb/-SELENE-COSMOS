@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070a12">
+  <meta name="description" content="See how the alignment of the Sun, Earth, and Moon creates eclipses.">
+  <title>Eclipse Lab — Selene &amp; Cosmos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body data-page="lore">
+  <canvas class="starfield" aria-hidden="true"></canvas><div class="ambient ambient--one" aria-hidden="true"></div><div class="ambient ambient--two" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Selene and Cosmos home"><span class="brand-mark" aria-hidden="true">☾</span><span>SELENE <i>&amp;</i> COSMOS</span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a class="nav-link" href="index.html">Observatory</a><a class="nav-link" href="phases.html">Moon phases</a><a class="nav-link" href="constellations.html">Star map</a><a class="nav-link" href="lore.html">Eclipses</a></nav>
+    <button class="stargaze-toggle" type="button" aria-pressed="false"><span class="status-dot"></span><span class="stargaze-label">Stargaze mode</span></button>
+  </header>
+  <main class="page-wrap inner-page">
+    <div class="page-kicker"><a href="index.html">OBSERVATORY</a><span>/</span><span>CELESTIAL ALIGNMENTS</span></div>
+    <section class="page-title-row"><div><p class="eyebrow">A RARE MOMENT IN THE ORBIT</p><h1>When worlds <em>align.</em></h1><p class="page-lede">Three celestial bodies. One precise line. Explore the beautiful geometry behind an eclipse.</p></div><div class="page-count">04 <span>—</span> 04</div></section>
+    <section class="eclipse-console glass-panel">
+      <div class="eclipse-stage"><div class="stage-label"><span class="live-label"><span class="pulse-dot"></span> ORBITAL SIMULATOR</span><span class="mono-label" data-eclipse-status>PARTIAL ALIGNMENT</span></div>
+        <canvas class="eclipse-canvas" data-eclipse-canvas role="img" aria-label="Animated diagram of the Sun, Earth, and Moon aligning"></canvas>
+        <div class="body-label body-label--sun"><i></i> SUN</div><div class="body-label body-label--earth"><i></i> EARTH</div><div class="body-label body-label--moon"><i></i> MOON</div>
+        <div class="alignment-readout"><span>ALIGNMENT</span><strong data-alignment>64%</strong></div>
+      </div>
+      <div class="eclipse-controls">
+        <span class="phase-overline">CHOOSE YOUR SHADOW</span>
+        <div class="segmented-control" role="group" aria-label="Eclipse type"><button class="is-active" type="button" data-eclipse-type="solar" aria-pressed="true">Solar eclipse</button><button type="button" data-eclipse-type="lunar" aria-pressed="false">Lunar eclipse</button></div>
+        <div class="eclipse-description"><span class="description-symbol" data-eclipse-symbol>☼</span><div><h2 data-eclipse-title>A shadow across the Sun.</h2><p data-eclipse-copy>A solar eclipse happens when the Moon passes between Earth and the Sun, briefly turning day into twilight.</p></div></div>
+        <label class="range-label" for="alignment-range"><span>ORBITAL ALIGNMENT</span><span data-alignment-value>64%</span></label>
+        <input id="alignment-range" class="eclipse-range" type="range" min="0" max="100" value="64" aria-label="Adjust orbital alignment">
+        <div class="range-ends"><span>OUT OF ALIGNMENT</span><span>PERFECT ALIGNMENT</span></div>
+        <button class="button button--subtle" type="button" data-eclipse-play><span aria-hidden="true">▶</span> <span data-play-label>Animate alignment</span></button>
+      </div>
+    </section>
+    <section class="eclipse-facts"><div class="section-heading section-heading--compact"><div><p class="eyebrow">THE SCIENCE OF SHADOWS</p><h2>Cosmic coincidence.</h2></div><span class="mono-label">A LITTLE CELESTIAL MATH</span></div>
+      <div class="fact-grid"><article class="science-card"><span class="science-number">01</span><h3>Near. Far. Just right.</h3><p>The Sun is about 400× wider than the Moon—and about 400× farther away. From Earth, they appear almost exactly the same size.</p><span class="science-formula">D☉ / D☾ ≈ r☉ / r☾ ≈ 400</span></article><article class="science-card"><span class="science-number">02</span><h3>A narrow shadow.</h3><p>The Moon's umbra traces a narrow path across Earth's surface. Outside this path, observers may see a partial eclipse instead.</p><span class="science-formula">UMBRA → TOTALITY → PENUMBRA</span></article><article class="science-card"><span class="science-number">03</span><h3>Not every month.</h3><p>The Moon's orbit is tilted about 5° to Earth's orbit. An eclipse needs the Moon to cross an orbital node at just the right moment.</p><span class="science-formula">i ≈ 5.145° · SAROS ≈ 18 YEARS</span></article></div>
+    </section>
+  </main>
+  <footer class="site-footer page-wrap"><a class="brand brand--footer" href="index.html"><span class="brand-mark" aria-hidden="true">☾</span><span>SELENE <i>&amp;</i> COSMOS</span></a><span>A small observatory for curious minds.</span><span class="footer-time" data-clock>LOCAL TIME — --:--:--</span></footer>
+  <div class="coordinates-hud" aria-live="polite"><span class="hud-dot"></span><span data-coordinates>SKY POSITION&nbsp; 00° 00′ / +00° 00′</span><span class="hud-divider"></span><span data-clock>--:--:--</span></div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070a12">
+  <meta name="description" content="A quiet, interactive observatory for exploring the Moon and the night sky.">
+  <title>Selene &amp; Cosmos — Lunar Observatory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body data-page="home">
+  <canvas class="starfield" aria-hidden="true"></canvas>
+  <div class="ambient ambient--one" aria-hidden="true"></div>
+  <div class="ambient ambient--two" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Selene and Cosmos home">
+      <span class="brand-mark" aria-hidden="true">☾</span>
+      <span>SELENE <i>&amp;</i> COSMOS</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-link" href="index.html">Observatory</a>
+      <a class="nav-link" href="phases.html">Moon phases</a>
+      <a class="nav-link" href="constellations.html">Star map</a>
+      <a class="nav-link" href="lore.html">Eclipses</a>
+    </nav>
+    <button class="stargaze-toggle" type="button" aria-pressed="false">
+      <span class="status-dot"></span><span class="stargaze-label">Stargaze mode</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero-shell page-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR WINDOW TO THE UNIVERSE</p>
+        <h1>The night sky,<br><em>closer than ever.</em></h1>
+        <p class="hero-description">A quiet place to wander through lunar phases, trace ancient constellations, and witness the geometry of the cosmos.</p>
+        <a class="button button--primary" href="phases.html">Begin your observation <span aria-hidden="true">↗</span></a>
+        <div class="hero-meta">
+          <div><span class="meta-label">TONIGHT'S MOON</span><strong>Full moon</strong></div>
+          <span class="meta-separator"></span>
+          <div><span class="meta-label">ILLUMINATION</span><strong>100%</strong></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit orbit--outer"></div>
+        <div class="orbit orbit--inner"></div>
+        <div class="moon-halo"></div>
+        <canvas class="moon-canvas moon-canvas--hero" data-moon data-phase="0.5" aria-label="Full Moon with illuminated craters"></canvas>
+        <div class="moon-caption"><span class="caption-rule"></span><span>THE MOON</span><small>384,400 KM FROM EARTH</small></div>
+        <div class="visual-coordinates">RA 08h 52m <span>·</span> DEC +19° 07′</div>
+        <span class="visual-star visual-star--a">✳</span><span class="visual-star visual-star--b">✦</span>
+      </div>
+      <div class="scroll-cue"><span></span> SCROLL TO EXPLORE</div>
+    </section>
+
+    <section class="overview-section page-wrap">
+      <div class="section-heading">
+        <div><p class="eyebrow">A UNIVERSE OF WONDER</p><h2>Choose your orbit.</h2></div>
+        <p class="section-intro">Look a little closer. There is always more to discover above us.</p>
+      </div>
+      <div class="feature-grid">
+        <a class="feature-card feature-card--moon" href="phases.html">
+          <span class="card-index">01 / LUNAR CYCLE</span>
+          <span class="card-icon" aria-hidden="true">◒</span>
+          <h3>Follow the Moon</h3><p>Move through the lunar month and watch sunlight reshape our closest neighbor.</p>
+          <span class="card-link">Explore the phases <b>↗</b></span>
+        </a>
+        <a class="feature-card feature-card--stars" href="constellations.html">
+          <span class="card-index">02 / DEEP SKY</span>
+          <span class="card-icon" aria-hidden="true">✧</span>
+          <h3>Connect the stars</h3><p>Trace familiar constellations and find stories written across the night.</p>
+          <span class="card-link">Open the star map <b>↗</b></span>
+        </a>
+        <a class="feature-card feature-card--eclipse" href="lore.html">
+          <span class="card-index">03 / CELESTIAL ALIGNMENT</span>
+          <span class="card-icon" aria-hidden="true">◉</span>
+          <h3>Chase an eclipse</h3><p>Set the Sun, Earth, and Moon in motion to reveal the magic of alignment.</p>
+          <span class="card-link">Witness an eclipse <b>↗</b></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="quote-band page-wrap">
+      <span class="quote-mark" aria-hidden="true">“</span>
+      <p>We are all made of star stuff.</p>
+      <span class="quote-credit">— CARL SAGAN</span>
+    </section>
+  </main>
+
+  <footer class="site-footer page-wrap">
+    <a class="brand brand--footer" href="index.html"><span class="brand-mark" aria-hidden="true">☾</span><span>SELENE <i>&amp;</i> COSMOS</span></a>
+    <span>A small observatory for curious minds.</span>
+    <span class="footer-time" data-clock>LOCAL TIME — --:--:--</span>
+  </footer>
+  <div class="coordinates-hud" aria-live="polite"><span class="hud-dot"></span><span data-coordinates>SKY POSITION&nbsp; 00° 00′ / +00° 00′</span><span class="hud-divider"></span><span data-clock>--:--:--</span></div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070a12">
+  <meta name="description" content="Explore a hand-drawn interactive map of the constellations.">
+  <title>Star Map — Selene &amp; Cosmos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body data-page="constellations">
+  <canvas class="starfield" aria-hidden="true"></canvas><div class="ambient ambient--one" aria-hidden="true"></div><div class="ambient ambient--two" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Selene and Cosmos home"><span class="brand-mark" aria-hidden="true">☾</span><span>SELENE <i>&amp;</i> COSMOS</span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a class="nav-link" href="index.html">Observatory</a><a class="nav-link" href="phases.html">Moon phases</a><a class="nav-link" href="constellations.html">Star map</a><a class="nav-link" href="lore.html">Eclipses</a></nav>
+    <button class="stargaze-toggle" type="button" aria-pressed="false"><span class="status-dot"></span><span class="stargaze-label">Stargaze mode</span></button>
+  </header>
+  <main class="page-wrap inner-page">
+    <div class="page-kicker"><a href="index.html">OBSERVATORY</a><span>/</span><span>THE NIGHT SKY</span></div>
+    <section class="page-title-row"><div><p class="eyebrow">A CELESTIAL FIELD GUIDE</p><h1>Stories in the <em>stars.</em></h1><p class="page-lede">Long before maps, we found our way by connecting the dots. Choose a constellation and follow its lines.</p></div><div class="page-count">03 <span>—</span> 04</div></section>
+    <section class="sky-layout">
+      <div class="sky-map glass-panel">
+        <div class="map-toolbar"><span class="live-label"><span class="pulse-dot"></span> NORTHERN SKY</span><button class="text-button" type="button" data-shooting-star>✦ <span>Make a wish</span></button></div>
+        <div class="map-canvas-wrap"><svg class="constellation-svg" viewBox="0 0 760 460" role="img" aria-label="Interactive constellation map"></svg><div class="map-compass"><span>N</span><i>✧</i></div></div>
+        <div class="map-footer"><span>RIGHT ASCENSION <b>06h 00m</b></span><span>DECLINATION <b>+25°</b></span><span class="map-scale"><i></i> 20°</span></div>
+      </div>
+      <aside class="constellation-sidebar">
+        <div class="sidebar-heading"><p class="eyebrow">CHOOSE A CONSTELLATION</p><span class="mono-label">VISIBLE TONIGHT</span></div>
+        <div class="constellation-list" role="group" aria-label="Constellations">
+          <button class="constellation-option is-selected" type="button" data-constellation="orion"><span class="constellation-symbol">✦</span><span><b>Orion</b><small>THE HUNTER · 7 BRIGHT STARS</small></span><span class="option-arrow">↗</span></button>
+          <button class="constellation-option" type="button" data-constellation="cassiopeia"><span class="constellation-symbol">⌁</span><span><b>Cassiopeia</b><small>THE QUEEN · 5 BRIGHT STARS</small></span><span class="option-arrow">↗</span></button>
+          <button class="constellation-option" type="button" data-constellation="ursa"><span class="constellation-symbol">✧</span><span><b>Ursa Major</b><small>THE GREAT BEAR · 7 BRIGHT STARS</small></span><span class="option-arrow">↗</span></button>
+          <button class="constellation-option" type="button" data-constellation="cygnus"><span class="constellation-symbol">✳</span><span><b>Cygnus</b><small>THE SWAN · 6 BRIGHT STARS</small></span><span class="option-arrow">↗</span></button>
+        </div>
+        <div class="constellation-fact"><span class="fact-label">DID YOU KNOW?</span><p data-constellation-fact>Orion's belt points southeast to Sirius, the brightest star in Earth's night sky.</p><span class="fact-rule"></span><span class="fact-coords" data-constellation-coords>RA 05h 35m · DEC −05° 23′</span></div>
+      </aside>
+    </section>
+    <section class="deep-sky-callout"><span class="callout-icon">✴</span><div><span class="eyebrow">KEEP LOOKING UP</span><h2>Every point of light has a story.</h2></div><p>These are only a handful of the 88 officially recognized constellations. The rest are waiting for you.</p></section>
+  </main>
+  <footer class="site-footer page-wrap"><a class="brand brand--footer" href="index.html"><span class="brand-mark" aria-hidden="true">☾</span><span>SELENE <i>&amp;</i> COSMOS</span></a><span>A small observatory for curious minds.</span><span class="footer-time" data-clock>LOCAL TIME — --:--:--</span></footer>
+  <div class="coordinates-hud" aria-live="polite"><span class="hud-dot"></span><span data-coordinates>SKY POSITION&nbsp; 00° 00′ / +00° 00′</span><span class="hud-divider"></span><span data-clock>--:--:--</span></div>
+</body>
+</html>
